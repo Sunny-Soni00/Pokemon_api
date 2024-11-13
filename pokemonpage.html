@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Search</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #ffcb05;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #2a75bb;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Main Content Styling */
+        main {
+            margin-top: 50px;
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            flex: 1;
+        }
+
+        /* Frame for Pokémon Details */
+        .frame {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #000;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: auto; /* Dynamic width */
+            max-width: 100%;
+            min-width: 300px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .frame img {
+            max-width: 100%; /* Fit to container */
+            height: auto;    /* Maintain aspect ratio */
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* Input and Button Styling */
+        input[type="text"] {
+            padding: 12px;
+            font-size: 1em;
+            width: calc(100% - 24px);
+            max-width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #2a75bb;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+        button:hover {
+            background-color: #1a4f8b;
+            transform: scale(1.05);
+        }
+
+        /* Footer Styling */
+        footer {
+            padding: 20px 0;
+            background-color: #ffcb05;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer p {
+            margin: 0;
+            color: #2a75bb;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pokémon Search</h1>
+    </header>
+    <main>
+        <!-- Search Input and Suggestions -->
+        <input type="text" id="pokemon-name" placeholder="Enter Pokémon name" list="pokemon-suggestions">
+        <datalist id="pokemon-suggestions">
+            <option value="Pikachu">
+            <option value="Charmander">
+            <option value="Bulbasaur">
+            <option value="Squirtle">
+            <option value="Eevee">
+            <!-- Add more Pokémon names as needed -->
+        </datalist>
+        <button onclick="fetchPokemon()">Search</button>
+
+        <!-- Frame for Pokémon Image and Details -->
+        <div id="pokemon-details" class="frame">
+            <!-- Pokémon image and details will be displayed here -->
+        </div>
+    </main><br><br> 
+    <footer>
+        <p>&copy; 2023 Pokémon Search. All rights reserved.</p>
+    </footer>
+    <script src="pokemonapi.js"></script>
+</body>
+</html>
